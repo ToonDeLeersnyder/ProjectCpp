@@ -4,3 +4,8 @@ shoot::shoot()
 {
 
 }
+
+void shoot::move()
+{
+
+}

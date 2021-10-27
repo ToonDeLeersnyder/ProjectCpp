@@ -6,6 +6,7 @@ class shoot
 {
 public:
     shoot();
+    void move();
 };
 
 #endif // SHOOT_H

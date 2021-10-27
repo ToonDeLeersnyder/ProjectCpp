@@ -13,12 +13,14 @@ SOURCES += \
     game.cpp \
     main.cpp \
     player.cpp \
+    score.cpp \
     shoot.cpp
 
 HEADERS += \
     enemy.h \
     game.h \
     player.h \
+    score.h \
     shoot.h
 
 FORMS +=

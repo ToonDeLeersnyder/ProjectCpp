@@ -13,6 +13,9 @@
 class Player:public QGraphicsRectItem
 {
 public:
+    int Hp;
+    int HPMax;
+
     Player();
     ~Player();
 

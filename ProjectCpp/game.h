@@ -8,13 +8,17 @@
 #include <QPixmap>
 #include <QBrush>
 #include <QImage>
-#include <player.h>
+#include "player.h"
+#include "score.h"
+
 
 
 class Game: public QGraphicsView
 {
 public:
     Game();
+
+
 };
 
 #endif // GAME_H
