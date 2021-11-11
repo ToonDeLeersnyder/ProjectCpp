@@ -19,7 +19,10 @@ public:
     Player();
     ~Player();
 
-    void keyPressEvent(QKeyEvent * event);
+    void moveLeft();
+    void moveRight();
+
+
 
 };
 
