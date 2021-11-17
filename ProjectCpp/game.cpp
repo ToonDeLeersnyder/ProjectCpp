@@ -35,23 +35,6 @@ Game::Game()
 
 void Game::keyPressEvent(QKeyEvent *event)
 {
-//    switch (event->key()) {
-//            case Qt::Key_Left:
-//                setPos(x()-30,y());
-
-//                if(x()<0){
-//                    setPos(0,y());
-//                }
-
-//            break;
-//            case Qt::Key_Right:
-//                setPos(x()+30,y());
-
-//                if(x()>1100){
-//                    setPos(1100,y());
-//                }
-//            break;
-//    }
 
     if (event->key() == Qt::Key_Left)
     {
@@ -66,8 +49,8 @@ void Game::keyPressEvent(QKeyEvent *event)
     {
 
         Shoot * shoot = new Shoot();
-        shoot->setRect(0,0,10,10);
-        shoot->setPos(player->x()-45, player->y() - 40);
+
+        shoot->setPos(player->x()+42.5, player->y() - 40);
         scene->addItem(shoot);
 
     }

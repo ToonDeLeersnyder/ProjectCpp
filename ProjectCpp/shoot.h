@@ -7,11 +7,16 @@
 #include <QPixmap>
 
 
-class Shoot:public QGraphicsRectItem
+class Shoot:public QObject,public QGraphicsPixmapItem
 {
+    Q_OBJECT
+
 public:
     Shoot();
+
+public slots:
     void move();
+
 };
 
 #endif // SHOOT_H
