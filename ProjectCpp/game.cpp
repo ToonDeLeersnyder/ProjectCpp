@@ -1,6 +1,6 @@
 #include "game.h"
-
 #include "shoot.h"
+#include "enemy.h"
 
 Game::Game()
 {
@@ -30,6 +30,8 @@ Game::Game()
 
 
 
+    create();
+
 }
 
 
@@ -58,3 +60,14 @@ void Game::keyPressEvent(QKeyEvent *event)
 
 
 }
+void Game::create()
+{
+    for(int i = 0; i < 10; i++)
+    {
+        qDebug()<< "BUH" ;
+        enemy = new Enemy();
+        scene->addItem(enemy);
+    }
+
+}
+

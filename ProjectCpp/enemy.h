@@ -4,11 +4,17 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsPixmapItem>
 
-class enemy
+class Enemy: public QObject,public QGraphicsPixmapItem
 {
+    Q_OBJECT
 public:
-    enemy();
+    Enemy();
+public slots:
     void move();
+
 };
+
+
+
 
 #endif // ENEMY_H
