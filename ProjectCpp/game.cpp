@@ -1,6 +1,7 @@
 #include "game.h"
 #include "shoot.h"
 #include "enemy.h"
+#include "button.h"
 
 Game::Game()
 {
@@ -17,8 +18,10 @@ Game::Game()
     setGeometry(180,30,1200,800);
     scene->setSceneRect(0,0,1200,800);
 
-
-
+}
+void Game::start()
+{
+    scene->clear();
     //Create player
     player= new Player();
     scene->addItem(player);
@@ -28,11 +31,21 @@ Game::Game()
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
 
+    // create score
+
+    score = new Score();
+    scene->addItem(score);
+
+    health = new Health();
+    health->setPos(health->x() + 1000,health->y());
+    scene->addItem(health);
 
 
+    // create enemy
     create();
 
 }
+
 
 
 void Game::keyPressEvent(QKeyEvent *event)
@@ -60,6 +73,38 @@ void Game::keyPressEvent(QKeyEvent *event)
 
 
 }
+
+void Game::displayMainMenu()
+{
+    // create the title text
+       QGraphicsTextItem* titleText = new QGraphicsTextItem(QString("battle of the code"));
+       QFont titleFont("comic sans MS",50);
+       titleText->setFont(titleFont);
+       int txPos = this->width()/2 - titleText->boundingRect().width()/2;
+       int tyPos = 150;
+       titleText->setPos(txPos,tyPos);
+       scene->addItem(titleText);
+
+       // create the play button
+       Button* playButton = new Button(QString("Play Epic Game"));
+       int xpos1 = (this->width()/2) + 5 ;
+       int ypos1 = 275;
+       playButton->setPos(xpos1,ypos1);
+       connect(playButton,SIGNAL(clicked()),this,SLOT(start()));
+       scene->addItem(playButton);
+
+       // create the quit button
+       Button* quitButton = new Button(QString("Quit"));
+       int xpos2 = this->width()/2 -  2*(quitButton->boundingRect().width()/2) - 5;
+       int ypos2 = 275;
+       quitButton->setPos(xpos2,ypos2);
+       connect(quitButton,SIGNAL(clicked()),this,SLOT(close()));
+       scene->addItem(quitButton);
+
+
+       // background color
+       scene->setBackgroundBrush(Qt::blue);
+}
 void Game::create()
 {
     for(int i = 0; i < 10; i++)
@@ -70,4 +115,6 @@ void Game::create()
     }
 
 }
+
+
 

@@ -14,23 +14,29 @@
 #include "player.h"
 #include "score.h"
 #include "enemy.h"
+#include "health.h"
 
 
 
 class Game: public QGraphicsView
 {
-
+    Q_OBJECT
 public:
     Game();
     void keyPressEvent(QKeyEvent * event);
+    void displayMainMenu();
+    void create();
 
 private:
     QGraphicsScene * scene;
     Player* player;
     Enemy* enemy;
+    Score * score;
+    Health * health;
 
 
-public :
-    void create();
+
+public slots:
+    void start();
 };
 #endif // GAME_H

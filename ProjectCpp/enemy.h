@@ -4,7 +4,7 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsPixmapItem>
 
-class Enemy: public QObject,public QGraphicsPixmapItem
+class Enemy: public QObject,public QGraphicsPixmapItem //4) usefull and correct inheritance, inherit from qobject and qgraph for the creation of the slots , connect function
 {
     Q_OBJECT
 public:

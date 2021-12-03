@@ -13,14 +13,19 @@
 class Player:public QGraphicsRectItem
 {
 public:
-    int Hp;
-    int HPMax;
+
 
     Player();
     ~Player();
 
+//    Health(QGraphicsItem * parent=0);
+//        void decrease();
+//        int getHealth();
+
     void moveLeft();
     void moveRight();
+
+
 
 
 

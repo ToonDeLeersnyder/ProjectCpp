@@ -14,7 +14,7 @@ class Shoot:public QObject,public QGraphicsPixmapItem
 public:
     Shoot();
 
-public slots:
+public slots://49 usefull slot function that calls timer to move the bullet
     void move();
 
 };

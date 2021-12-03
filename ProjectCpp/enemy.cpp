@@ -6,7 +6,8 @@
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QList>
-extern Game * game;
+#include "health.h"
+
 
 Enemy::Enemy()
 {
@@ -27,6 +28,7 @@ void Enemy::move()
     setPos(x(),y()+5);
     if (pos().y()  > 800)
     {
+
         scene()->removeItem(this);
         delete this;
         }
