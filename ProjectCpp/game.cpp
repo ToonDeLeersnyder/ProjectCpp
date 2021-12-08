@@ -19,6 +19,14 @@ Game::Game()
     scene->setSceneRect(0,0,1200,800);
 
 }
+
+Game::~Game()
+{
+    delete player;
+    delete enemy;
+    delete score;
+    delete health;
+}
 void Game::start()
 {
     scene->clear();
@@ -38,6 +46,7 @@ void Game::start()
 
     health = new Health();
     health->setPos(health->x() + 1000,health->y());
+
     scene->addItem(health);
 
 
@@ -80,23 +89,24 @@ void Game::displayMainMenu()
        QGraphicsTextItem* titleText = new QGraphicsTextItem(QString("battle of the code"));
        QFont titleFont("comic sans MS",50);
        titleText->setFont(titleFont);
-       int txPos = this->width()/2 - titleText->boundingRect().width()/2;
-       int tyPos = 150;
+       const int txPos = this->width()/2 - titleText->boundingRect().width()/2;
+       const int tyPos = 150;
        titleText->setPos(txPos,tyPos);
-       scene->addItem(titleText);
+       /**/titleText->setDefaultTextColor("grey");
+       /**/scene->addItem(titleText);
 
        // create the play button
        Button* playButton = new Button(QString("Play Epic Game"));
-       int xpos1 = (this->width()/2) + 5 ;
-       int ypos1 = 275;
+       const int xpos1 = (this->width()/2) + 5 ;
+       const int ypos1 = 275;
        playButton->setPos(xpos1,ypos1);
        connect(playButton,SIGNAL(clicked()),this,SLOT(start()));
        scene->addItem(playButton);
 
        // create the quit button
        Button* quitButton = new Button(QString("Quit"));
-       int xpos2 = this->width()/2 -  2*(quitButton->boundingRect().width()/2) - 5;
-       int ypos2 = 275;
+       const int xpos2 = this->width()/2 -  2*(quitButton->boundingRect().width()/2) - 5;
+       const int ypos2 = 275;
        quitButton->setPos(xpos2,ypos2);
        connect(quitButton,SIGNAL(clicked()),this,SLOT(close()));
        scene->addItem(quitButton);
@@ -105,13 +115,51 @@ void Game::displayMainMenu()
        // background color
        scene->setBackgroundBrush(Qt::blue);
 }
+
+void Game::deathMenu()
+{
+    QGraphicsTextItem* DeathText = new QGraphicsTextItem(QString("GAMLE OVER"));
+    QFont titleFont("comic sans MS",50);
+    DeathText->setFont(titleFont);
+    const int txPos = this->width()/2 - DeathText->boundingRect().width()/2;
+    const int tyPos = 150;
+    DeathText->setPos(txPos,tyPos);
+    /**/DeathText->setDefaultTextColor("red");
+    /**/scene->addItem(DeathText);
+
+    // create the play button
+    Button* playButton = new Button(QString("Play Again"));
+    const int xpos1 = (this->width()/2) + 5 ;
+    const int ypos1 = 275;
+    playButton->setPos(xpos1,ypos1);
+    connect(playButton,SIGNAL(clicked()),this,SLOT(start()));
+    scene->addItem(playButton);
+
+    // create the quit button
+    Button* quitButton = new Button(QString("Quit"));
+    const int xpos2 = this->width()/2 -  2*(quitButton->boundingRect().width()/2) - 5;
+    const int ypos2 = 275;
+    quitButton->setPos(xpos2,ypos2);
+    connect(quitButton,SIGNAL(clicked()),this,SLOT(close()));
+    scene->addItem(quitButton);
+
+
+    // background color
+    scene->setBackgroundBrush(Qt::black);
+
+}
+
+
+
+
 void Game::create()
 {
     for(int i = 0; i < 10; i++)
     {
-        qDebug()<< "BUH" ;
+        //qDebug()<< "BUH" ;
         enemy = new Enemy();
         scene->addItem(enemy);
+
     }
 
 }
