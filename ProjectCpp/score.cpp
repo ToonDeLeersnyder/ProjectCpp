@@ -1,14 +1,14 @@
 #include "score.h"
 #include <QFont>
 #include <QDebug>
-
+#include <QFile>
 
 
 Score::Score(QGraphicsTextItem * parent): QGraphicsTextItem(parent)
 {
     score = 0;
    updateBestScore();
-    setPlainText(QString("Score: ") + QString::number(bestscore));
+    setPlainText(QString("Score: ") + QString::number(score));
     setDefaultTextColor(Qt::green);
     setFont(QFont("times",16));
 
@@ -50,7 +50,7 @@ int Score::updateBestScore()
 {
 
     std::ofstream output("bestscore.txt");
-    if (score < bestscore)
+    if (score > bestscore)
     {
         output << score;
     }

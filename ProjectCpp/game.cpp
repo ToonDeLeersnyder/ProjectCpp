@@ -111,6 +111,7 @@ void Game::displayMainMenu()
        connect(quitButton,SIGNAL(clicked()),this,SLOT(close()));
        scene->addItem(quitButton);
 
+       /* text box for best score */
 
        // background color
        scene->setBackgroundBrush(Qt::blue);
@@ -118,7 +119,7 @@ void Game::displayMainMenu()
 
 void Game::deathMenu()
 {
-    QGraphicsTextItem* DeathText = new QGraphicsTextItem(QString("GAMLE OVER"));
+    QGraphicsTextItem* DeathText = new QGraphicsTextItem(QString("GAME OVER"));
     QFont titleFont("comic sans MS",50);
     DeathText->setFont(titleFont);
     const int txPos = this->width()/2 - DeathText->boundingRect().width()/2;
@@ -142,6 +143,9 @@ void Game::deathMenu()
     quitButton->setPos(xpos2,ypos2);
     connect(quitButton,SIGNAL(clicked()),this,SLOT(close()));
     scene->addItem(quitButton);
+
+    /* text box for best score and ur score*/
+
 
 
     // background color
