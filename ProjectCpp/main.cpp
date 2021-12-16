@@ -4,6 +4,9 @@
 #include <game.h>
 
 
+//  1) CLEAN MAIN
+
+
 
 int main(int argc, char *argv[])
 {
@@ -12,7 +15,7 @@ int main(int argc, char *argv[])
    //pass val of arg v for cheat activation?
    //game->healthPass(argv[1])
 
-   Game* game= new Game();
+   Toon::Game* game= new Toon::Game();
 
    game->show();
    game->displayMainMenu();

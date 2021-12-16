@@ -9,26 +9,27 @@
 #include <QBrush>
 #include <QImage>
 #include <QObject>
-
-class Player:public QGraphicsRectItem
+namespace Toon
 {
-public:
+    class Player:public QGraphicsRectItem
+    {
+    public:
 
 
-    Player();
-    ~Player();
+        Player();
+        ~Player();
 
-//    Health(QGraphicsItem * parent=0);
-//        void decrease();
-//        int getHealth();
+    //    Health(QGraphicsItem * parent=0);
+    //        void decrease();
+    //        int getHealth();
 
-    void moveLeft();
-    void moveRight();
-
-
+        void moveLeft(int MoveSpeed = 20); //17) default valus in function definition
+        void moveRight(int MoveSpeed = 20);
 
 
 
-};
 
+
+    };
+}
 #endif // PLAYER_H

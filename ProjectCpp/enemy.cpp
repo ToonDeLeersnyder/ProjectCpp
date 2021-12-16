@@ -9,7 +9,7 @@
 #include "health.h"
 
 
-Enemy::Enemy()
+Toon::Enemy::Enemy()
 {
     int random_number = rand() % 1200;
     setPos(random_number,0);
@@ -22,7 +22,7 @@ Enemy::Enemy()
 
 }
 
-void Enemy::move()
+void Toon::Enemy::move()
 {
     // move enemy down
     setPos(x(),y()+5);

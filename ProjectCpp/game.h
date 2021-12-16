@@ -16,30 +16,32 @@
 #include "enemy.h"
 #include "health.h"
 
-
-
-class Game: public QGraphicsView
+namespace Toon
 {
-    Q_OBJECT
-public:
-    Game();
-    ~Game();
-    void keyPressEvent(QKeyEvent * event);
-    void displayMainMenu();
-    void deathMenu();
-    void create();
+    class Game: public QGraphicsView
+    {
+        Q_OBJECT
+    public:
+        Game();
+        ~Game();
+        void keyPressEvent(QKeyEvent * event);
+        void displayMainMenu();
+        void deathMenu();
+        void create();
 
 
-private:
-    QGraphicsScene * scene;
-    Player* player;
-    Enemy* enemy;
-    Score * score;
-    Health * health;
+    private:
+        QGraphicsScene * scene;
+        Player* player;
+        Enemy* enemy;
+        Score * score;
+        Health * health;
 
 
 
-public slots:
-    void start();
-};
+    public slots:
+        void start();
+    };
+
+}
 #endif // GAME_H

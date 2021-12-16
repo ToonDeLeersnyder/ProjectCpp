@@ -3,7 +3,7 @@
 #include "enemy.h"
 #include "button.h"
 
-Game::Game()
+Toon::Game::Game()
 {
 
 
@@ -20,14 +20,14 @@ Game::Game()
 
 }
 
-Game::~Game()
+Toon::Game::~Game()
 {
     delete player;
     delete enemy;
     delete score;
     delete health;
 }
-void Game::start()
+void Toon::Game::start()
 {
     scene->clear();
     //Create player
@@ -57,7 +57,7 @@ void Game::start()
 
 
 
-void Game::keyPressEvent(QKeyEvent *event)
+void Toon::Game::keyPressEvent(QKeyEvent *event)
 {
 
     if (event->key() == Qt::Key_Left)
@@ -83,7 +83,7 @@ void Game::keyPressEvent(QKeyEvent *event)
 
 }
 
-void Game::displayMainMenu()
+void Toon::Game::displayMainMenu()
 {
     // create the title text
        QGraphicsTextItem* titleText = new QGraphicsTextItem(QString("battle of the code"));
@@ -117,7 +117,7 @@ void Game::displayMainMenu()
        scene->setBackgroundBrush(Qt::blue);
 }
 
-void Game::deathMenu()
+void Toon::Game::deathMenu()
 {
     QGraphicsTextItem* DeathText = new QGraphicsTextItem(QString("GAME OVER"));
     QFont titleFont("comic sans MS",50);
@@ -156,7 +156,7 @@ void Game::deathMenu()
 
 
 
-void Game::create()
+void Toon::Game::create()
 {
     for(int i = 0; i < 10; i++)
     {

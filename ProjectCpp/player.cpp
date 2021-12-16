@@ -2,7 +2,7 @@
 #include <QGraphicsScene>
 
 
-Player::Player()
+Toon::Player::Player()
 {
 
 // add the item to the scene
@@ -14,24 +14,24 @@ Player::Player()
 
 }
 
-Player::~Player()
+Toon::Player::~Player()
 {
 
 }
 
-void Player::moveLeft()
+void Toon::Player::moveLeft(int MoveSpeed)
 {
     if(pos().x() > 0)
     {
-        setPos(x()-20,y());
+        setPos(x()-MoveSpeed,y());
     }
 }
 
-void Player::moveRight()
+void Toon::Player::moveRight(int MoveSpeed)
 {
     if(pos().x() < 1100)
     {
-        setPos(x()+20, y());
+        setPos(x()+MoveSpeed, y());
     }
 }
 

@@ -3,18 +3,19 @@
 #include <QGraphicsTextItem>
 #include <QFont>
 
-
-
-class Health: public QGraphicsTextItem
+namespace Toon
 {
-public:
-        Health(QGraphicsItem * parent=0);
-        void damage();
-        int getHealth();
+    class Health: public QGraphicsTextItem //4) inherit for text to be added to the scene
+    {
+    public:
+            Health(QGraphicsItem * parent=0);
+            void damage();
+            int getHealth() const ; // 3) usefull and correct encapsulation.--------------------------------------------------------------------
+            void setHealth(int a);
 
-private:
-        int health;
-        const int maxHealth = 10;
-};
-
+    private:
+            int health;
+            const int maxHealth = 10;
+    };
+}
 #endif // HEALTH_H

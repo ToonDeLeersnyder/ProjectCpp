@@ -4,7 +4,7 @@
 #include <QFile>
 
 
-Score::Score(QGraphicsTextItem * parent): QGraphicsTextItem(parent)
+Toon::Score::Score(QGraphicsTextItem * parent): QGraphicsTextItem(parent)
 {
     score = 0;
    updateBestScore();
@@ -15,19 +15,19 @@ Score::Score(QGraphicsTextItem * parent): QGraphicsTextItem(parent)
 
 }
 
-void Score::increase(int score)
+void Toon::Score::increase(int score)
 {
-    this->score += score;//15) usefull this. if there is no this then the score wont update anything.
+    this->score += score;
     setPlainText(QString("Score: ") + QString::number( score)); // Score: 0
 
 }
-// 3) usefull and correct encapsulation, access for private variable read by public function in same class
-int Score::getScore()
+
+int Toon::Score::getScore()
 {
     return score;
 }
 
-int Score::getBestScore()
+int Toon::Score::getBestScore()
 {
 //    QFile inputFile(fileName);
 //    if (inputFile.open(QIODevice::ReadOnly))
@@ -46,7 +46,7 @@ int Score::getBestScore()
     return 0;
 }
 
-int Score::updateBestScore()
+int Toon::Score::updateBestScore()
 {
 
     std::ofstream output("bestscore.txt");
