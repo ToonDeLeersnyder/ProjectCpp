@@ -1,13 +1,16 @@
 #include "game.h"
 #include "shoot.h"
 #include "enemy.h"
+#include "slowenemy.h"
+#include "speedenemy.h"
 #include "button.h"
+
 
 Toon::Game::Game()
 {
 
 
-    // create a scene
+
     scene = new QGraphicsScene();
     // add a view to visualize the scene
 
@@ -23,7 +26,6 @@ Toon::Game::Game()
 Toon::Game::~Game()
 {
     delete player;
-    delete enemy;
     delete score;
     delete health;
 }
@@ -51,7 +53,7 @@ void Toon::Game::start()
 
 
     // create enemy
-    create();
+    createEnemy();
 
 }
 
@@ -62,12 +64,12 @@ void Toon::Game::keyPressEvent(QKeyEvent *event)
 
     if (event->key() == Qt::Key_Left)
     {
-      player->moveLeft();
+      player->movePlayerLeft();
 
     }
     else if (event->key() == Qt::Key_Right)
     {
-      player->moveRight();
+      player->movePlayerRight();
     }
     else if (event->key() == Qt::Key_Space)
     {
@@ -156,13 +158,24 @@ void Toon::Game::deathMenu()
 
 
 
-void Toon::Game::create()
-{
+void Toon::Game::createEnemy()
+    {
     for(int i = 0; i < 10; i++)
     {
         //qDebug()<< "BUH" ;
-        enemy = new Enemy();
+        Enemy* enemy = new SlowEnemy();
+        enemy->setEnemySpeed(5);
         scene->addItem(enemy);
+        //enemy->EnemyMove(5);
+
+    }
+    for(int i = 0; i < 10; i++)
+    {
+        //qDebug()<< "BUH" ;
+        Enemy* enemy2 = new SpeedEnemy();
+        enemy2->setEnemySpeed(10);
+        scene->addItem(enemy2);
+
 
     }
 

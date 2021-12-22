@@ -27,13 +27,13 @@ namespace Toon
         void keyPressEvent(QKeyEvent * event);
         void displayMainMenu();
         void deathMenu();
-        void create();
+        void createEnemy();
 
 
     private:
         QGraphicsScene * scene;
         Player* player;
-        Enemy* enemy;
+
         Score * score;
         Health * health;
 

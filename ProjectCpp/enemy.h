@@ -10,8 +10,14 @@ namespace Toon
         Q_OBJECT
     public:
         Enemy();
+        virtual inline void setEnemySpeed(int speedValue = 5) { EnemySpeed = speedValue; };
+        virtual inline int getEnemySpeed() const { return EnemySpeed; };
     public slots:
-        void move();
+        virtual void EnemyMove() = 0;
+    private:
+
+        int EnemySpeed;
+
 
     };
 

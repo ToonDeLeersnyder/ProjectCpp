@@ -12,8 +12,7 @@ int main(int argc, char *argv[])
 {
    QApplication a(argc, argv);
 
-   //pass val of arg v for cheat activation?
-   //game->healthPass(argv[1])
+
 
    Toon::Game* game= new Toon::Game();
 

@@ -15,7 +15,7 @@ Toon::Score::Score(QGraphicsTextItem * parent): QGraphicsTextItem(parent)
 
 }
 
-void Toon::Score::increase(int score)
+void Toon::Score::increaseScore(int score)
 {
     this->score += score;
     setPlainText(QString("Score: ") + QString::number( score)); // Score: 0

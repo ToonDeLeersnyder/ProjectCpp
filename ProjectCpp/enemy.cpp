@@ -11,27 +11,28 @@
 
 Toon::Enemy::Enemy()
 {
-    int random_number = rand() % 1200;
-    setPos(random_number,0);
-    setPixmap(QPixmap(":/images/bullet/Resources/bullet.png"));
-    QTimer * timer = new QTimer(this);
-    connect(timer,SIGNAL(timeout()),this,SLOT(move()));
+//    int random_Position_Number = rand() % 1200;
+//    setPos(random_Position_Number,0);
+//    setPixmap(QPixmap(":/images/bullet/Resources/bullet.png"));
+//    int random_Speed_Value = rand() % 10;
+//    QTimer * timer = new QTimer(this);
+//    connect(timer,SIGNAL(timeout()),this,SLOT(move(random_Speed_Value)));
 
-    // start the timer
-    timer->start(50);
+//    // start the timer
+//    timer->start(50);
 
 }
 
-void Toon::Enemy::move()
+void Toon::Enemy::EnemyMove()
 {
-    // move enemy down
-    setPos(x(),y()+5);
-    if (pos().y()  > 800)
-    {
+//    // move enemy down
+//    setPos(x(),y()+enemyMoveSpeed);
+//    if (pos().y()  > 800)
+//    {
 
-        scene()->removeItem(this);
-        delete this;
-        }
+//        scene()->removeItem(this);
+//        delete this;
+//        }
 }
 
 

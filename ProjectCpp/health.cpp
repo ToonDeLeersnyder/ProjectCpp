@@ -2,7 +2,7 @@
 #include "game.h"
 
 
-Toon::Health::Health(QGraphicsItem * parent): QGraphicsTextItem(parent)
+Toon::Health::Health(QGraphicsItem * parent): QGraphicsTextItem(parent) // create the health text for on the game scene
 {
 
         setHealth(10);
@@ -12,7 +12,7 @@ Toon::Health::Health(QGraphicsItem * parent): QGraphicsTextItem(parent)
         setDefaultTextColor(Qt::red);
         setFont(QFont("times",16));
 }
-void Toon::Health::damage(){
+void Toon::Health::damage(){ // decrease health
     health--;
     setPlainText(QString("Health: ") + QString::number(health)+QString("/") + QString::number(maxHealth)); // Health: 2
     if(health == 0)
@@ -25,7 +25,7 @@ void Toon::Health::damage(){
 
 }
 
-int Toon::Health::getHealth() const { // 19) usefull getter s and settters
+int Toon::Health::getHealth() const { // 19) usefull getters and setters
     return health;
 }
 

@@ -4,5 +4,7 @@
     </qresource>
     <qresource prefix="/images/bullet">
         <file>Resources/bullet.png</file>
+        <file>Resources/enemyFast.png</file>
+        <file>Resources/enemySlow.png</file>
     </qresource>
 </RCC>

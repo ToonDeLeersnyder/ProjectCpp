@@ -9,8 +9,8 @@ namespace Toon
     {
     public:
         Score(QGraphicsTextItem * parent=0);
-        void increase(int amount);
-        inline int getScore();// 44) inline function,
+        void increaseScore(int amount);
+        int getScore();// 44) inline function,
         int getBestScore(); // 16) usefull member function
         int updateBestScore();
     private:

@@ -16,7 +16,9 @@ SOURCES += \
     main.cpp \
     player.cpp \
     score.cpp \
-    shoot.cpp
+    shoot.cpp \
+    slowenemy.cpp \
+    speedenemy.cpp
 
 HEADERS += \
     button.h \
@@ -25,7 +27,9 @@ HEADERS += \
     health.h \
     player.h \
     score.h \
-    shoot.h
+    shoot.h \
+    slowenemy.h \
+    speedenemy.h
 
 FORMS +=
 

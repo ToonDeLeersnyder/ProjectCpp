@@ -13,9 +13,9 @@ namespace Toon
         Button(QString name, QGraphicsItem* parent=NULL);
 
         // public methods (events)
-        void mousePressEvent(QGraphicsSceneMouseEvent *event);
-        void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
-        void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
+        void mousePressEvent(QGraphicsSceneMouseEvent *event = NULL);
+        void hoverEnterEvent(QGraphicsSceneHoverEvent *event = NULL);
+        void hoverLeaveEvent(QGraphicsSceneHoverEvent *event = NULL);
     signals:
         void clicked();
     private:

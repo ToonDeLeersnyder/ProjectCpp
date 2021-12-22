@@ -19,7 +19,7 @@ Toon::Player::~Player()
 
 }
 
-void Toon::Player::moveLeft(int MoveSpeed)
+void Toon::Player::movePlayerLeft(int MoveSpeed)
 {
     if(pos().x() > 0)
     {
@@ -27,7 +27,7 @@ void Toon::Player::moveLeft(int MoveSpeed)
     }
 }
 
-void Toon::Player::moveRight(int MoveSpeed)
+void Toon::Player::movePlayerRight(int MoveSpeed)
 {
     if(pos().x() < 1100)
     {
