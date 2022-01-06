@@ -22,27 +22,30 @@ Toon::SpeedEnemy::SpeedEnemy()
 void Toon::SpeedEnemy::EnemyMove()
 {
     QList<QGraphicsItem *> colliding_items = collidingItems();
-    for(int i = 0; i < colliding_items.size(); ++i){
+    for(int i = 0; i < colliding_items.size(); ++i)
+    {
 
-                if(typeid(*(colliding_items[i])) == typeid(Player)  ){
-
-
-                    // Remove and delete items
-
-                    scene()->removeItem(this);
+        if(typeid(*(colliding_items[i])) == typeid(Player)  )
+        {
 
 
-                    delete this;
+            // Remove and delete items
 
-                    return;
-                }
-       }
+            scene()->removeItem(this);
+
+
+            delete this;
+
+            return;
+        }
+    }
 
     setPos(x(),y()+EnemySpeed);
+
     if (pos().y()  > 800)
     {
 
         scene()->removeItem(this);
         delete this;
-        }
+    }
 }
