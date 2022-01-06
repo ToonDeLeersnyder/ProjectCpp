@@ -4,6 +4,7 @@
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QList>
+#include <shoot.h>
 
 Toon::SlowEnemy::SlowEnemy()
 {
@@ -21,6 +22,22 @@ Toon::SlowEnemy::SlowEnemy()
 
 void Toon::SlowEnemy::EnemyMove()
 {
+    QList<QGraphicsItem *> colliding_items = collidingItems();
+    for(int i = 0; i < colliding_items.size(); ++i){
+
+                if(typeid(*(colliding_items[i])) == typeid(Player)  ){
+
+
+                    // Remove and delete items
+
+                    scene()->removeItem(this);
+
+
+                    delete this;
+
+                    return;
+                }
+       }
     setPos(x(),y()+EnemySpeed);
     if (pos().y()  > 800)
     {

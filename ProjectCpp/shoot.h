@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QBrush>
 #include <QPixmap>
+#include <game.h>
 namespace Toon
 {
     class Shoot:public QObject,public QGraphicsPixmapItem

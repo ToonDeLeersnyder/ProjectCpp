@@ -1,8 +1,10 @@
 #include "speedenemy.h"
+#include <enemy.h>
 #include <QString>
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QList>
+#include <shoot.h>
 
 Toon::SpeedEnemy::SpeedEnemy()
 {
@@ -19,6 +21,23 @@ Toon::SpeedEnemy::SpeedEnemy()
 
 void Toon::SpeedEnemy::EnemyMove()
 {
+    QList<QGraphicsItem *> colliding_items = collidingItems();
+    for(int i = 0; i < colliding_items.size(); ++i){
+
+                if(typeid(*(colliding_items[i])) == typeid(Player)  ){
+
+
+                    // Remove and delete items
+
+                    scene()->removeItem(this);
+
+
+                    delete this;
+
+                    return;
+                }
+       }
+
     setPos(x(),y()+EnemySpeed);
     if (pos().y()  > 800)
     {
