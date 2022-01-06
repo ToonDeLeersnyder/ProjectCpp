@@ -6,18 +6,24 @@
 #include "button.h"
 
 
-Toon::Game::Game()
+Toon::Game::Game(int x, int y)
 {
 
 
 
-    scene = new QGraphicsScene();
+    if ( x == 0 ||  y == 0)
+    {
+        x = 1200;
+        y = 800;
+
+    }
+    scene = new QGraphicsScene(); // 32) new hierzo--------------------------------------------------
     // add a view to visualize the scene
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setScene(scene);
-    setFixedSize(1200,800);
+    setFixedSize(x,y);
     setGeometry(180,30,1200,800);
     scene->setSceneRect(0,0,1200,800);
 
@@ -121,37 +127,37 @@ void Toon::Game::displayMainMenu()
 
 void Toon::Game::deathMenu()
 {
-    QGraphicsTextItem* DeathText = new QGraphicsTextItem(QString("GAME OVER"));
-    QFont titleFont("comic sans MS",50);
-    DeathText->setFont(titleFont);
-    const int txPos = this->width()/2 - DeathText->boundingRect().width()/2;
-    const int tyPos = 150;
-    DeathText->setPos(txPos,tyPos);
-    /**/DeathText->setDefaultTextColor("red");
-    /**/scene->addItem(DeathText);
+        QGraphicsTextItem* DeathText = new QGraphicsTextItem(QString("GAME OVER"));
+        QFont titleFont("comic sans MS",50);
+        DeathText->setFont(titleFont);
+        const int txPos = this->width()/2 - DeathText->boundingRect().width()/2;
+        const int tyPos = 150;
+        DeathText->setPos(txPos,tyPos);
+        /**/DeathText->setDefaultTextColor("red");
+        /**/scene->addItem(DeathText);
 
-    // create the play button
-    Button* playButton = new Button(QString("Play Again"));
-    const int xpos1 = (this->width()/2) + 5 ;
-    const int ypos1 = 275;
-    playButton->setPos(xpos1,ypos1);
-    connect(playButton,SIGNAL(clicked()),this,SLOT(start()));
-    scene->addItem(playButton);
+        // create the play button
+        Button* playButton = new Button(QString("Play Again"));
+        const int xpos1 = (this->width()/2) + 5 ;
+        const int ypos1 = 275;
+        playButton->setPos(xpos1,ypos1);
+        connect(playButton,SIGNAL(clicked()),this,SLOT(start()));
+        scene->addItem(playButton);
 
-    // create the quit button
-    Button* quitButton = new Button(QString("Quit"));
-    const int xpos2 = this->width()/2 -  2*(quitButton->boundingRect().width()/2) - 5;
-    const int ypos2 = 275;
-    quitButton->setPos(xpos2,ypos2);
-    connect(quitButton,SIGNAL(clicked()),this,SLOT(close()));
-    scene->addItem(quitButton);
+        // create the quit button
+        Button* quitButton = new Button(QString("Quit"));
+        const int xpos2 = this->width()/2 -  2*(quitButton->boundingRect().width()/2) - 5;
+        const int ypos2 = 275;
+        quitButton->setPos(xpos2,ypos2);
+        connect(quitButton,SIGNAL(clicked()),this,SLOT(close()));
+        scene->addItem(quitButton);
 
-    /* text box for best score and ur score*/
+        /* text box for best score and ur score*/
 
 
 
-    // background color
-    scene->setBackgroundBrush(Qt::black);
+        // background color
+        scene->setBackgroundBrush(Qt::black);
 
 }
 
@@ -159,12 +165,12 @@ void Toon::Game::deathMenu()
 
 
 void Toon::Game::createEnemy()
-    {
+{
     for(int i = 0; i < 10; i++)
     {
         //qDebug()<< "BUH" ;
         Enemy* enemy = new SlowEnemy();
-        enemy->setEnemySpeed(5);
+        enemy->setEnemySpeed(5); // 10)polymorphism-----------------------------------------------------------------------------
         scene->addItem(enemy);
         //enemy->EnemyMove(5);
 

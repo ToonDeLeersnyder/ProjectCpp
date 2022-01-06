@@ -1,6 +1,7 @@
 #include <QApplication>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <stdlib.h>
 #include <game.h>
 
 
@@ -12,9 +13,7 @@ int main(int argc, char *argv[])
 {
    QApplication a(argc, argv);
 
-
-
-   Toon::Game* game= new Toon::Game();
+   Toon::Game* game= new Toon::Game(atoi(argv[1]), atoi(argv[2]));
 
    game->show();
    game->displayMainMenu();

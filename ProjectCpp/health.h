@@ -8,9 +8,9 @@ namespace Toon
     class Health: public QGraphicsTextItem //4) inherit for text to be added to the scene
     {
     public:
-            Health(QGraphicsItem * parent=0);
+            Health(QGraphicsItem * parent=0 );//12) sepcific constructor 2--------------------------------------
             void damage();
-            int getHealth() const ; // 3) usefull and correct encapsulation.--------------------------------------------------------------------
+            int getHealth() const ; // 3) usefull and correct encapsulation, get and set
             void setHealth(int a);
 
     private:

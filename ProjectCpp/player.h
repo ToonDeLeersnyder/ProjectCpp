@@ -17,13 +17,11 @@ namespace Toon
 
 
         Player();
-        ~Player();
+        ~Player();//14) destructor---------------------------------------------------
 
-    //    Health(QGraphicsItem * parent=0);
-    //        void decrease();
-    //        int getHealth();
 
-        void movePlayerLeft(int MoveSpeed = 20); //17) default valus in function definition
+
+        void movePlayerLeft(int MoveSpeed = 20); //17) default valus in function definition----------------------------
         void movePlayerRight(int MoveSpeed = 20);
 
 

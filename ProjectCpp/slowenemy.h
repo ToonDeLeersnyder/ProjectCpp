@@ -8,7 +8,7 @@ namespace Toon
     {
         Q_OBJECT
     public:
-        SlowEnemy();
+        SlowEnemy(); //11) default constructor---------------------------------------------------
         ~SlowEnemy() {}
         inline void setEnemySpeed(int speedValue = 5) { EnemySpeed = speedValue; };
         inline int getEnemySpeed() const { return EnemySpeed; };

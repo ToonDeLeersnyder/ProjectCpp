@@ -10,11 +10,11 @@ namespace Toon
     public:
         Score(QGraphicsTextItem * parent=0);
         void increaseScore(int amount);
-        int getScore();// 44) inline function,
-        int getBestScore(); // 16) usefull member function
+        int getScore() const;
+        int getBestScore(); // 16) usefull member function -----------------------------------------------------------
         int updateBestScore();
     private:
-        int score; // 18) usefull member variable
+        int score; // 18) usefull member variable----------------------------------------------------------------
         int bestscore;
     };
 }

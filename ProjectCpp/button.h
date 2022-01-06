@@ -9,10 +9,10 @@ namespace Toon
     class Button:public QObject, public QGraphicsRectItem{
         Q_OBJECT
     public:
-        // constructors
-        Button(QString name, QGraphicsItem* parent=NULL);
 
-        // public methods (events)
+        Button(QString name, QGraphicsItem* parent=NULL); //12) sepcific constructor 1--------------------------------------
+
+
         void mousePressEvent(QGraphicsSceneMouseEvent *event = NULL);
         void hoverEnterEvent(QGraphicsSceneHoverEvent *event = NULL);
         void hoverLeaveEvent(QGraphicsSceneHoverEvent *event = NULL);

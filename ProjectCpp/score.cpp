@@ -22,25 +22,15 @@ void Toon::Score::increaseScore(int score)
 
 }
 
-int Toon::Score::getScore()
+int Toon::Score::getScore() const
 {
     return score;
 }
 
 int Toon::Score::getBestScore()
 {
-//    QFile inputFile(fileName);
-//    if (inputFile.open(QIODevice::ReadOnly))
-//    {
-//       QTextStream in(&inputFile);
-//       while (!in.atEnd())
-//       {
-//          QString line = in.readLine();
-//          ...
-//       }
-//       inputFile.close();
-//    }
-    std::ifstream input("bestscore.txt");
+
+    std::ifstream input("bestscore.txt"); //47) usefull fileio---------------------------------------------------------
     input >> bestscore;
 
     return 0;

@@ -22,8 +22,8 @@ namespace Toon
     {
         Q_OBJECT
     public:
-        Game();
-        ~Game();
+        Game(int x = 1200, int y = 800);//13) member initialization--------------------------------------------------------------
+        ~Game(); //14) destructor--------------------------------------------------------
         void keyPressEvent(QKeyEvent * event);
         void displayMainMenu();
         void deathMenu();

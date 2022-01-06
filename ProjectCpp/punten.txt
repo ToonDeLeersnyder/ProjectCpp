@@ -1,0 +1,42 @@
+1) main
+2) button.h
+3) health.h 
+4) health.h
+6) enemy.h
+7) enemy.h
+8) enemy.h
+9) enemy.h
+10) game.cpp
+11) slowenemy.h en speedenemy.h
+12) health.h en buttton.h
+13) game.h
+14) game.h  and player.h
+15) shoot.cpp
+16) score.h
+17) player.h
+18) score.h
+19) health.h
+20) everywhere!!
+21) yes
+22) yes
+23) yes
+24) yes
+25) yes
+29) yes
+31) elk object
+32) game.cpp
+33) shoot.cpp
+35) health.cpp
+36) shoot.cpp
+37) veel
+44) enemy.h
+47) score.cpp
+49)signal -> button.h slot -> enemy.h
+51) yes
+52) yes
+56) yes
+
+
+
+
+
